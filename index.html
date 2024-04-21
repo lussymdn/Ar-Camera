@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Obyek 3D dengan A-Frame</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+  <body style="margin : 0px; overflow: hidden;">
+    <!-- embedded vr-mode-ui="enabled: false" adalah untuk menonaktifkan tombol VR (stereocospic view) -->
+    <!-- debugUIEnabled: false adalah untuk menonaktifkan UI untuk debugging (true hanya untuk troubleshooting) -->
+    <a-scene embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false;">
+        <!-- a-marker-camera membuat obyek tetap ada walau marker tidak terlihat -->
+        <a-marker-camera preset="hiro">
+  <!-- Obyek 1: Kotak -->
+  <a-box position="-4 1.5 -10" color="red" scale="1 1 1" rotation="0 45 0"></a-box>
+      
+  <!-- Obyek 2: Silinder -->
+  <a-cylinder position="-2 1 -10" color="blue" radius="1" height="2" rotation="30 0 0"></a-cylinder>
+  
+  <!-- Obyek 3: Dodekahedron -->
+  <a-dodecahedron position="0 1 -15" color="green" radius="1" rotation="0 0 0"></a-dodecahedron>
+  
+  <!-- Obyek 4: Octahedron -->
+  <a-octahedron position="2 1 -20" color="yellow" radius="1" rotation="0 60 0"></a-octahedron>
+  
+  <!-- Obyek 5: Sphere -->
+  <a-sphere position="4 1 -25" color="orange" radius="1" rotation="45 0 0"></a-sphere>
+   
+        </a-marker-camera>
+<!-- Kamera AR -->
+        <a-entity camera arjs-anchor look-controls></a-entity>
+    </a-scene>
